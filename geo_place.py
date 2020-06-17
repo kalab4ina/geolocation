@@ -18,13 +18,14 @@ def extract_lat_long_via_address(address):
    
    # Делаем запрос по нашей ссылке
    r = requests.get(endpoint)
-   # print(r.status_code)
+   print(r.status_code)
    # Извлекаем нужные данные из формата json
    results = r.json()['results'][0]
+   print(results)
    lat = results['locations'][0]['displayLatLng']['lat']
    lng = results['locations'][0]['displayLatLng']['lng']
    return lat, lng
 
 # Пример
-print(type(extract_lat_long_via_address('Москва, улица Новый Арбат, дом 24')))
+print(extract_lat_long_via_address('Москва,Новый Арбат,24'))
 
