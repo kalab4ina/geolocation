@@ -11,11 +11,12 @@ work_sheet =  bd_open[bd_sheet]
 
 data = []
 for i in range(3,6):
+    addres = work_sheet['H'+str(i)].value + work_sheet['B'+str(i)].value
     data += [[work_sheet['F'+str(i)].value,
             work_sheet['B'+str(i)].value,
             work_sheet['D'+str(i)].value,
             work_sheet['E'+str(i)].value,
-            extract_lat_long_via_address(work_sheet['B'+str(i)].value)]]
+            extract_lat_long_via_address(addres)]]
 
 new_base = openpyxl.Workbook()
 sheet = new_base.active
