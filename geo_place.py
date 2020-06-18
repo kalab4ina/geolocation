@@ -24,7 +24,7 @@ def extract_lat_long_via_address(address):
    #print(results)
    lat = results['locations'][0]['displayLatLng']['lat']
    lng = results['locations'][0]['displayLatLng']['lng']
-   return lat, lng
+   return [lat, lng]
 
 
 
